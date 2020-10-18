@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe!</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style >
+    td{
+      background-color: #c971e2;
+      border: 5px;
+      width: 100px;
+      height: 100px;
+      border-style: solid;
+      text-align: center;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+    }
+
+    body{
+      background-color: #c971e2;
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="alert alert-success" role="alert">
+    <h4> Welcome To Tic Tac Toe Game and Enjoy! </h4>
+    <p>All Set To Play!. Click once for "X" and double Click for "O"</p>
+  <a  id="b" class="btn btn-primary btn-lg" href="#" role="button">Restart!</a>
+</div><br>
+<br>
+<center>
+  <table  class="bor">
+    <tr>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+    </tr>
+    <tr>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+    </tr>
+    <tr>
+      <td ></td>
+      <td ></td>
+      <td ></td>
+    </tr>
+  </table>
+</center>
+</div>
+
+  </body>
+  <script>
+  //Restart the Game button
+  var res = document.querySelector("#b")
+
+  //Grab all the squares
+  var sq = document.querySelectorAll("td")
+
+
+
+  //Clear all the squares
+  function clrsq() {
+
+    for (var i = 0; i < sq.length; i++) {
+      sq[i].textContent = "";
+    }
+  }
+
+  res.addEventListener("click", clrsq);
+
+  function fill() {
+    if (this.textContent === "") {
+      this.textContent = "X";
+    }
+    else if (this.textContent === "X") {
+      this.textContent = "O";
+    }
+    else {
+      this.textContent = "";
+    }
+  }
+
+  for (var i = 0; i < sq.length; i++) {
+    sq[i].addEventListener("click", fill);
+  }
+
+
+  </script>
+</html>
